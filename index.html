@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINAL PROGRAMACIÓN</title>
+    <title>Programación 1 | Final | PELUSO | SECCHES</title>
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    
+    <header>
+        <div class="titulo">
+            <h1>Programación 1 | Final | PELUSO | SECCHES</h1>
+        </div>
+        <p>Total: $<span>0</span></p>
+        <button>Ver carrito <span>(0)</span></button>
+    </header>
+    <main>
+        <div class="contenido">
+            <div class="seccion-filtrar">
+                <label for="filtro">Filtrar por género:</label>
+                <select id="filtro">
+                    <option value="Todos">Todos</option>
+                    <option value="Alternativo">Alternativo</option>
+                    <option value="K-Pop">K-Pop</option>
+                    <option value="Rock">Rock</option>
+                </select>
+            </div>
+            <div class="seccion-productos">
+                <h2>Productos</h2>
+                <ul id="productos"></ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <li>Profesor Corbalán Cristian</li>
+        <li>
+            <a href="mailto:cristian.corbalan@davinci.edu.ar?subject=P1%20-%20Consulta%20-%20DW2NA%20-%20Apellido,%20Nombre"
+                target="_blank">cristian.corbalan@davinci.edu.ar</a>
+        </li>
+        <li>Programación 1</li>
+    </footer>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
