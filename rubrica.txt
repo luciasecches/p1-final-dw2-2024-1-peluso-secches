@@ -4,26 +4,26 @@
 
 // ------------------------------------------------------------------------------------------- OBLIGATORIOS
 
-[] Armar el catálogo a partir de un array (+0,50)
-[] Mostrar en el listado los datos solicitados (+0,50)
-[] Permite agregar productos al carrito (+0,25)
-[] Al hacer click en el botón se incrementa la cantidad total de productos (+0,25)
-[] Al hacer click en el botón se actualiza el monto total a pagar (+0,25)
-[] Filtrar por categoría (+0,25)
+[X] Armar el catálogo a partir de un array (+0,50)
+[X] Mostrar en el listado los datos solicitados (+0,50)
+[X] Permite agregar productos al carrito (+0,25)
+[X] Al hacer click en el botón se incrementa la cantidad total de productos (+0,25)
+[X] Al hacer click en el botón se actualiza el monto total a pagar (+0,25)
+[X] Filtrar por categoría (+0,25)
 [] Muestra un banner publicitario al cambiar de categoría (+0,25)
 [] Hacer desaparecer el banner pasados 10 segundos (+0,25)
-[] Mostrar el listado de los productos agregados al carrito (+0,50)
-[] Permite quitar de a uno cada producto (+0,25)
-[] Permite vaciar el carrito (+0,25)
+[X] Mostrar el listado de los productos agregados al carrito (+0,50)
+[X] Permite quitar de a uno cada producto (+0,25)
+[X] Permite vaciar el carrito (+0,25)
 [] Genera la sección de checkout con los campos requeridos (+0,5)
 
 // ------------------------------------------------------------------------------------------- SUMAN PUNTOS
 
-[] Permite ver el detalle del producto (+0,5)
+[X] Permite ver el detalle del producto (+0,5)
 [] Muestra más de una imagen por producto (+0,75)
 [] El banner es distinto según la categoria (+0,5)
 [] El banner tiene una funcionalidad (+0,5)
-[] Agrupación de productos iguales (+1,25) - osea mostrar "Tal producto x3", no repetir
+[X] Agrupación de productos iguales (+1,25) - osea mostrar "Tal producto x3", no repetir
 [] El checkout tiene datos obligatorios (+1)
 [] Resalta los campos obligatorios utilizando DOM (+0,5)
 [] Al finalizar la compra resetea el carrito (+0,5)

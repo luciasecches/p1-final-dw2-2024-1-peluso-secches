@@ -10,21 +10,24 @@ al final en la mesa que se haya anotado para rendir el final.
 
 ● Los archivos utilizados para el desarrollo deberán estar ordenados bajo una arquitectura de
 directorios clara y prolija.
+
 [X]  Además, se deberá adjuntar dentro del archivo comprimido, un archivo llamado alumnxs.txt,
 con los siguientes datos personales: Alumn@s, cuatrimestre, comisión, turno, materia y
 profesor.
 
 Introducción
-[] Se debe presentar un sistema de compra on-line (carro de compras) que conste de:
-[] Navegación de categorías.
-[] Catálogo de productos.
-[] Agregar y quitar elementos de la compra.
+
+Se debe presentar un sistema de compra on-line (carro de compras) que conste de:
+
+[X] Navegación de categorías.
+[X] Catálogo de productos.
+[X] Agregar y quitar elementos de la compra.
 [] Cierre de la compra solicitando datos del pago y del cliente.
-[] El trabajo es individual o grupal de 2 (dos) personas, desarrollando una maqueta HTML
+
+El trabajo es individual o grupal de 2 (dos) personas, desarrollando una maqueta HTML
 válida, implementando las tecnologías y conceptos dictados en el transcurso de la cursada de
 la materia. A tal efecto, se aplicará JavaScript con manejo de DOM y objetos nativos de
 ECMAScript.
-
 
 [] Serán desaprobadas las entregas que carezcan de diseño o que el mismo no se visualice de
 manera apropiada en los navegadores de uso común.
@@ -36,32 +39,32 @@ el proceso completo de la compra.
 
 Mínimo para aprobar:
 
-[] La interacción de todo el proceso de compra (navegar categorías, ver producto,
+[X] La interacción de todo el proceso de compra (navegar categorías, ver producto,
 resumen de compra y checkout) debe programarse en un único documento HTML.
-[] Se deben aplicar las técnicas de manejo de DOM dictadas durante la cursada,
+[X] Se deben aplicar las técnicas de manejo de DOM dictadas durante la cursada,
 haciendo especial implementación en la creación y eliminación de objetos, alteraciones
 de CSS, etc.
-[] Debe poseer un catálogo de productos que pueda filtrarse por categorías.
-[] Los productos deben estar divididos, como mínimo, en tres categorías diferentes y
+[X] Debe poseer un catálogo de productos que pueda filtrarse por categorías.
+[X] Los productos deben estar divididos, como mínimo, en tres categorías diferentes y
 debe de haber 6 como mínimo.
-[] El listado de productos debe obtenerse de un ARRAY multidimensional o de Objetos
+[X] El listado de productos debe obtenerse de un ARRAY multidimensional o de Objetos
 OBJECT.
 [] Cada vez que se cambia de categoría debe aparecer una oferta especial que se
 destaque durante 10 segundos a modo de banner flotante, luego esta oferta DEBE
 DESAPARECER.
 ○ En el listado de productos, mostrar:
-    [] Nombre.
-    [] Descripción. (Si hacen el detalle del producto, la descripción se puede agregar
+    [X] Nombre.
+    [X] Descripción. (Si hacen el detalle del producto, la descripción se puede agregar
     ahí y no necesita aparecer en el listado)
-    [] Precio.
-    [] Una imagen en miniatura.
-    [] Categoría.
+    [X] Precio.
+    [X] Una imagen en miniatura.
+    [X] Categoría.
 
-[] Debe haber un área del sitio que muestre (mientras el usuario navega por el sitio) la
+[X] Debe haber un área del sitio que muestre (mientras el usuario navega por el sitio) la
 cantidad de productos agregados al carrito y el monto total a pagar, que al hacerle clic
 debe listar TODOS los productos agregados con el subtotal por cada producto y el
 total de la compra.
-[] Los productos deben quitarse, ya sea de uno en uno, así como todos los que se han
+[X] Los productos deben quitarse, ya sea de uno en uno, así como todos los que se han
 comprado.
 [] Debe haber un botón que marque el final de la selección de productos y permita
 avanzar al proceso de ingreso de datos de envío y pago, comúnmente conocido como
@@ -75,10 +78,10 @@ productos del carro.
 
 Para sumar nota:
 
-[] Ver detalles del producto, en una "ampliación" (Debería de mostrar todos los datos del
+[X] Ver detalles del producto, en una "ampliación" (Debería de mostrar todos los datos del
 producto).
 [] Si el ampliar la imagen ofrece más de una foto (a modo de galería de fotos), mejor.
-[] Si se selecciona más de una vez, el mismo producto debe aparecer una única vez en el
+[X] Si se selecciona más de una vez, el mismo producto debe aparecer una única vez en el
 detalle de la compra, indicando la cantidad de veces que se compró cada producto.
 [] Hacer que el banner rote aleatoriamente o sea distinto cada vez que se cambia de
 categoría y ofrecer alguna interacción (ver o agregar un producto, ir a una categoría,
