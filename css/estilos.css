@@ -160,6 +160,10 @@ li {
     height: 30%;
     max-width: 300px;
 }
+
+.modal img:first-of-type {
+    margin-right: 30px;
+}
   
 .modal h3,
 .modal p,

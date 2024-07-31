@@ -7,7 +7,10 @@ let productos = [
       id: 1,
       nombre: "All Born Screaming — St. Vincent",
       precio: 30000,
-      imagen: "all-born-screaming.jpg",
+      imagenes: [
+        "img/all-born-screaming.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "Alternativo",
       descripcion:
         "El séptimo álbum de Clark, titulado All Born Screaming, fue estrenado el 26 de abril del 2024. El álbum fue autoproducido por Clark, y tuvo colaboraciones con Dave Grohl, Cate Le Bon, Josh Freese, Rachel Eckroth, Mark Guiliana, Justin Meldal-Johnsen, Stella Mogzawa y David Ralicke. Con 10 canciones, la intérprete se adentra en géneros como el rock progresivo e industrial, jazz, electrónica y ska.",
@@ -16,7 +19,10 @@ let productos = [
       id: 2,
       nombre: "<Dall> — ARTMS",
       precio: 25000,
-      imagen: "dall.jpg",
+      imagenes: [
+        "img/dall.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "K-Pop",
       descripcion:
         "<Dall> (Hangul: 달, Luna; acrónimo de “Devine All Love & Live”) es el álbum debut completo de ARTMS. Fue lanzado el 31 de mayo de 2024, a la 1PM KST, junto con la canción principal “Virtual Angel”.",
@@ -25,7 +31,10 @@ let productos = [
       id: 3,
       nombre: "What's Your Pleasure? — Jessie Ware",
       precio: 35000,
-      imagen: "whats-your-pleasure.jpg",
+      imagenes: [
+        "img/whats-your-pleasure.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "Alternativo",
       descripcion:
         "What's Your Pleasure? —en español, ¿Cúal es tu placer?— es el cuarto álbum de estudio de la cantante y compositora británica, Jessie Ware, que fue lanzado mundialmente el 26 de junio de 2020 por los sellos discográficos PMR, Virgin EMI y EMI.",
@@ -34,7 +43,10 @@ let productos = [
       id: 4,
       nombre: "KISS OF LIFE — KISS OF LIFE",
       precio: 25000,
-      imagen: "kiss-of-life.jpg",
+      imagenes: [
+        "img/kiss-of-life.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "K-Pop",
       descripcion:
         "KISS OF LIFE es el primer EP del grupo surcoreano del mismo nombre. Fue lanzado por S2 Entertainment el 5 de julio de 2023. El mini álbum contiene seis pistas, incluido el sencillo principal «Shhh» y cuatro canciones en solitario, una por cada integrante, las cuales también tienen videos complementarios.",
@@ -43,7 +55,10 @@ let productos = [
       id: 5,
       nombre: "RUSH! (ARE U COMING?) — Måneskin",
       precio: 35000,
-      imagen: "rush-are-u-coming.jpg",
+      imagenes: [
+        "img/rush-are-u-coming.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "Rock",
       descripcion:
         "Rush! es el tercer álbum de estudio de la banda italiana de rock Måneskin, lanzado el 20 de enero de 2023 a través de Epic Records y Sony Music. Måneskin grabó ''probablemente 50'' canciones para el álbum, parte de las cuales se grabaron en Los Ángeles con el productor Max Martin.",
@@ -52,7 +67,10 @@ let productos = [
       id: 6,
       nombre: "So Much (for) Stardust — Fall Out Boy",
       precio: 30000,
-      imagen: "so-much-for-stardust.jpg",
+      imagenes: [
+        "img/so-much-for-stardust.jpg",
+        "https://placehold.co/600x600"
+      ],
       categoria: "Rock",
       descripcion:
         "So Much (For) Stardust es el octavo álbum de estudio de la banda estadounidense de rock Fall Out Boy. El disco fue publicado el 24 de marzo de 2023 por Fueled by Ramen. El álbum marca un regreso a un sonido más guiado por la guitarra.",
@@ -131,7 +149,8 @@ function listarProductos(productosAListar = productos) {
       let li = document.createElement("li");
   
       let img = document.createElement("img");
-      img.src = `img/${producto.imagen}`;
+      // img.src = `img/${producto.imagenes[0]}`;
+      img.src = producto.imagenes[0];
       img.alt = producto.nombre;
   
       let div = document.createElement("div");
@@ -320,9 +339,14 @@ function mostrarDetallesProducto(producto) {
     let titulo = document.createElement("h2");
     titulo.innerText = producto.nombre;
   
-    let imagen = document.createElement("img");
-    imagen.src = `img/${producto.imagen}`;
-    imagen.alt = producto.nombre;
+    let contenedorImagenes = document.createElement("div");
+    for (let imagen of producto.imagenes){
+      let img = document.createElement("img");
+      // img.src = `img/${imagen}`;
+      img.src = imagen;
+      img.alt = producto.nombre;
+      contenedorImagenes.appendChild(img);
+    }
   
     let listaDescripcion = document.createElement("ul");
     listaDescripcion.classList.add("descripcion-lista");
@@ -362,7 +386,7 @@ function mostrarDetallesProducto(producto) {
     botonAgregar.dataset.id = producto.id;
     botonAgregar.addEventListener("click", () => agregarAlCarrito(producto));
   
-    contenido.append(titulo, imagen, listaDescripcion, botonAgregar, cerrar);
+    contenido.append(titulo, contenedorImagenes, listaDescripcion, botonAgregar, cerrar);
   
     modal.appendChild(contenido);
     main.appendChild(modal);
