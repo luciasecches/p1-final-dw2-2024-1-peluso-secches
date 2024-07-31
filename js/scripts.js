@@ -80,6 +80,7 @@ let main = document.querySelector("main");
 // Filtrado por categorías
 selectFiltro.addEventListener("change", event => {
     let filtroSeleccionado = event.target.value;
+    mostrarBanner();
   
     if (filtroSeleccionado === "Todos") {
       listarProductos();
@@ -89,6 +90,33 @@ selectFiltro.addEventListener("change", event => {
     }
 });
 
+// Función para mostar el banner al cambiar de categoría
+function mostrarBanner(){
+  let banner = document.createElement("div");
+  banner.classList.add("banner");
+  
+  let imagen = document.createElement("img");
+  imagen.src = "https://placehold.co/800x200";
+  imagen.alt = "Banner publicitario";
+  // Agregarle diseño al banner, y un href para la oferta
+  
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
+    event.preventDefault();
+    main.removeChild(banner);
+  });
+  
+  banner.append(imagen, cerrar);
+  
+  main.appendChild(banner);
+
+  setTimeout(function() {
+     main.removeChild(banner);
+  }, 10000);
+}
   
 // Función para listar productos
 function listarProductos(productosAListar = productos) {

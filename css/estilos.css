@@ -131,12 +131,7 @@ li {
     min-width: 400px;
 }
   
-.modal a {
-    text-decoration: none;
-    /*color: #d0e0e3;*/
-}
-  
-.modal a.cerrar {
+.modal a.cerrar, .banner a.cerrar {
     position: fixed;
     z-index: 1;
     display: flex;
@@ -144,7 +139,7 @@ li {
     justify-content: center;
     align-items: center;
     top: 1em;
-    right: 2em;
+    right: 1em;
     border-radius: 1.5em;
     width: 3em;
     height: 3em;
@@ -213,3 +208,13 @@ li {
     display: block;
 }
   
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
