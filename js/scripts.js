@@ -32,12 +32,12 @@ let productos = [
     },
     {
       id: 4,
-      nombre: "NA — NAYEON",
+      nombre: "KISS OF LIFE — KISS OF LIFE",
       precio: 25000,
-      imagen: "na.jpg",
+      imagen: "kiss-of-life.jpg",
       categoria: "K-Pop",
       descripcion:
-        "Na es el segundo EP de la cantante surcoreana Nayeon, miembro del grupo Twice. Fue lanzado por JYP Entertainment y Republic Records el 14 de junio de 2024. El mini álbum contiene siete pistas, incluido el sencillo principal «ABCD» y colaboraciones con los cantantes Sam Kim y Julie de Kiss of Life.",
+        "KISS OF LIFE es el primer EP del grupo surcoreano del mismo nombre. Fue lanzado por S2 Entertainment el 5 de julio de 2023. El mini álbum contiene seis pistas, incluido el sencillo principal «Shhh» y cuatro canciones en solitario, una por cada integrante, las cuales también tienen videos complementarios.",
     },
     {
       id: 5,
