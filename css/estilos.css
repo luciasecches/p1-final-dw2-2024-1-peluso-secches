@@ -218,3 +218,11 @@ li {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.banner img {
+    border-radius: 14px;
+}
+
+.banner:hover {
+    cursor: pointer;
+}

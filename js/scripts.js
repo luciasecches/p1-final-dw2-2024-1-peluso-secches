@@ -92,30 +92,36 @@ selectFiltro.addEventListener("change", event => {
 
 // Función para mostar el banner al cambiar de categoría
 function mostrarBanner(){
-  let banner = document.createElement("div");
-  banner.classList.add("banner");
-  
-  let imagen = document.createElement("img");
-  imagen.src = "https://placehold.co/800x200";
-  imagen.alt = "Banner publicitario";
-  // Agregarle diseño al banner, y un href para la oferta
-  
-  let cerrar = document.createElement("a");
-  cerrar.classList.add("cerrar");
-  cerrar.href = "#";
-  cerrar.innerText = "X";
-  cerrar.addEventListener("click", event => {
-    event.preventDefault();
-    main.removeChild(banner);
-  });
-  
-  banner.append(imagen, cerrar);
-  
-  main.appendChild(banner);
+  let bannerYaExistente = document.querySelector(".banner");
 
-  setTimeout(function() {
-     main.removeChild(banner);
-  }, 10000);
+  if(bannerYaExistente){
+    main.removeChild(banner);
+  }else{
+    let banner = document.createElement("div");
+    banner.classList.add("banner");
+  
+    let imagen = document.createElement("img");
+    imagen.src = "https://placehold.co/800x200";
+    imagen.alt = "Banner publicitario";
+    // Agregarle diseño al banner, y un href para la oferta
+    
+    let cerrar = document.createElement("a");
+    cerrar.classList.add("cerrar");
+    cerrar.href = "#";
+    cerrar.innerText = "X";
+    cerrar.addEventListener("click", event => {
+      event.preventDefault();
+      main.removeChild(banner);
+    });
+
+    setTimeout(function() {
+      main.removeChild(banner);
+    }, 10000);
+    
+    banner.append(imagen, cerrar);
+    
+    main.appendChild(banner);
+  }
 }
   
 // Función para listar productos
