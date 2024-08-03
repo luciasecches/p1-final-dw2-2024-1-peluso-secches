@@ -28,7 +28,7 @@
 [] Resalta los campos obligatorios utilizando DOM (+0,5)
 [] Al finalizar la compra resetea el carrito (+0,5)
 [] Utiliza clases para generar objetos (+0,5)
-[] Implementa la detección del teclado (+0,5)
+[X] Implementa la detección del teclado (+0,5)
 [] Implementa el uso de localStorage (+0,5)
 
 // ------------------------------------------------------------------------------------------- RESTAN PUNTOS

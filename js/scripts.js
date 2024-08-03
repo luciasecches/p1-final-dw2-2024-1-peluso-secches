@@ -110,10 +110,10 @@ selectFiltro.addEventListener("change", event => {
 
 // Función para mostar el banner al cambiar de categoría
 function mostrarBanner(){
-  let bannerYaExistente = document.querySelector(".banner");
+  let bannerExistente = document.querySelector(".banner");
 
-  if(bannerYaExistente){
-    main.removeChild(bannerYaExistente);
+  if(bannerExistente){
+    main.removeChild(bannerExistente);
   }
 
   let banner = document.createElement("div");
@@ -328,7 +328,6 @@ function vaciarCarrito() {
     main.removeChild(document.getElementById("resultCarrito"));
 }
 
-
 // Función modal descripción
 function mostrarDetallesProducto(producto) {
     let modal = document.createElement("div");
@@ -393,6 +392,20 @@ function mostrarDetallesProducto(producto) {
     main.appendChild(modal);
   }
   
+// Función para detectar el teclado (y cerrar las modales y banners)
+
+window.addEventListener("keydown", event => {
+  let modalExistente = document.querySelector(".modal");
+  let bannerExistente = document.querySelector(".banner");
+  if (event.code === "Escape") {
+    if (modalExistente) {
+      main.removeChild(modalExistente);
+    } else if (bannerExistente) {
+      main.removeChild(bannerExistente);
+    }
+  }
+})
+
 botonVerCarrito.addEventListener("click", mostrarCarrito);
   
 listarProductos();

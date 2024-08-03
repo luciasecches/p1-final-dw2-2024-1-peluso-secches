@@ -92,7 +92,7 @@ haber alguna validación desde JavaScript)
 [] Destacar visualmente los campos que no pasen satisfactoriamente la validación.
 [] Desarrollar funciones constructoras para los elementos de los cuales se deban crear
 instancias.
-[] Detección de teclado para los casos donde pueda implementarse (por ejemplo, cerrar
+[X] Detección de teclado para los casos donde pueda implementarse (por ejemplo, cerrar
 la ventana modal al usar la tecla escape, o moverse a la imagen anterior/siguiente con
 las flechas).
 [] El uso de localStorage.
