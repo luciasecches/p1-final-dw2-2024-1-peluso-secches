@@ -77,8 +77,6 @@ let productos = [
     },
 ];
 
-let carrito = [];
-
 let selectFiltro = document.getElementById("filtro");
 let listaDeProductos = document.getElementById("productos");
 
@@ -88,14 +86,25 @@ let contadorCarrito = 0;
 let spanPrecioTotal = document.querySelector("header p span");
 let precioTotal = 0;
 
-// Para formatear el precio a pesos
-let peso = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS'});
+let peso = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS'}); // Para formatear el precio a pesos
+
+// Se obtienen los productos del localStorage (si hay) y se actualiza el carrito.
+
+let carrito = obtenerProductosEnCarrito();
+
+carrito.forEach(producto => {
+  contadorCarrito += producto.cantidad;
+  precioTotal += producto.subtotal;
+});
+
+actualizarCarrito();
 
 let botonVerCarrito = document.querySelector("header button");
 
 let main = document.querySelector("main");
 
 // Filtrado por categorías
+
 selectFiltro.addEventListener("change", event => {
     let filtroSeleccionado = event.target.value;
     mostrarBanner();
@@ -109,6 +118,7 @@ selectFiltro.addEventListener("change", event => {
 });
 
 // Función para mostar el banner al cambiar de categoría
+
 function mostrarBanner(){
   let bannerExistente = document.querySelector(".banner");
 
@@ -142,8 +152,8 @@ function mostrarBanner(){
   main.appendChild(banner);
 }
 
-  
 // Función para listar productos
+
 function listarProductos(productosAListar = productos) {
     listaDeProductos.innerText = "";
     for (let producto of productosAListar) {
@@ -184,6 +194,7 @@ function listarProductos(productosAListar = productos) {
 }
 
 // Función para agregar al carrito
+
 function agregarAlCarrito(producto) {
     let productoExistente = carrito.find(item => item.id === producto.id);
   
@@ -206,15 +217,18 @@ function agregarAlCarrito(producto) {
     precioTotal += producto.precio;
   
     actualizarCarrito();
+    guardarProductosEnCarrito();
 }
 
 // Función para actualizar el carrito
+
 function actualizarCarrito() {
     spanContadorCarrito.innerText = `(${contadorCarrito})`;
     spanPrecioTotal.innerText = peso.format(precioTotal);
 }
 
 // Función para mostrar el carrito
+
 function mostrarCarrito() {
     let resultCarrito = document.createElement("div");
     resultCarrito.classList.add("modal");
@@ -267,6 +281,7 @@ function mostrarCarrito() {
 }
 
 // Función para listar productos en el carrito
+
 function listarProductosCarrito() {
     let listaCarrito = document.getElementById("lista-carrito");
     listaCarrito.innerText = "";
@@ -301,6 +316,7 @@ function listarProductosCarrito() {
   }
 
 // Función para eliminar del carrito
+
 function eliminarDelCarrito(id) {
     let index = carrito.findIndex(item => item.id === id);
   
@@ -318,19 +334,23 @@ function eliminarDelCarrito(id) {
   
       actualizarCarrito();
       listarProductosCarrito();
+      guardarProductosEnCarrito();
     }
 }
 
 // Función para vaciar el carrito
+
 function vaciarCarrito() {
     carrito = [];
     contadorCarrito = 0;
     precioTotal = 0;
     actualizarCarrito();
+    guardarProductosEnCarrito();
     main.removeChild(document.getElementById("resultCarrito"));
 }
 
 // Función modal descripción
+
 function mostrarDetallesProducto(producto) {
     let modal = document.createElement("div");
     modal.classList.add("modal");
@@ -407,6 +427,16 @@ window.addEventListener("keydown", event => {
   }
 })
 
+// Implementación de localStorage
+
+function guardarProductosEnCarrito(){
+  localStorage.setItem('productosEnCarrito', JSON.stringify(carrito));
+}
+
+function obtenerProductosEnCarrito(){
+  return JSON.parse(localStorage.getItem('productosEnCarrito')) ?? [];
+}
+
 botonVerCarrito.addEventListener("click", mostrarCarrito);
-  
+
 listarProductos();

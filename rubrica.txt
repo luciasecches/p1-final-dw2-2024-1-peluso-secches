@@ -1,5 +1,7 @@
+// Hasta ahora tendríamos como nota un 8 🎉
+
 [] Código pobre (+0,95)
-[] Código correcto (+1)
+[X] Código correcto (+1)
 [] Código optimizado (+1,05)
 
 // ------------------------------------------------------------------------------------------- OBLIGATORIOS
@@ -29,7 +31,7 @@
 [] Al finalizar la compra resetea el carrito (+0,5)
 [] Utiliza clases para generar objetos (+0,5)
 [X] Implementa la detección del teclado (+0,5)
-[] Implementa el uso de localStorage (+0,5)
+[X] Implementa el uso de localStorage (+0,5)
 
 // ------------------------------------------------------------------------------------------- RESTAN PUNTOS
 

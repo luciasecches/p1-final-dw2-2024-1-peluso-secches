@@ -95,7 +95,7 @@ instancias.
 [X] Detección de teclado para los casos donde pueda implementarse (por ejemplo, cerrar
 la ventana modal al usar la tecla escape, o moverse a la imagen anterior/siguiente con
 las flechas).
-[] El uso de localStorage.
+[X] El uso de localStorage.
 [] Resetear el carrito al finalizar la compra.
 
 ------------------------------------
