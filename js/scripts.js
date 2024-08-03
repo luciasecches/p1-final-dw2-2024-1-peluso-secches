@@ -8,8 +8,8 @@ let productos = [
       nombre: "Hyperdrama — Justice",
       precio: 30000,
       imagenes: [
-        "img/hyperdrama.jpg",
-        "img/justice.jpg"
+        "hyperdrama.jpg",
+        "justice.jpg"
       ],
       categoria: "Electronica",
       descripcion:
@@ -20,8 +20,8 @@ let productos = [
       nombre: "BRAT — Charli xcx",
       precio: 35000,
       imagenes: [
-        "img/brat.jpg",
-        "img/charli-xcx.jpg"
+        "brat.jpg",
+        "charli-xcx.jpg"
       ],
       categoria: "Electronica",
       descripcion:
@@ -32,8 +32,8 @@ let productos = [
       nombre: "KISS OF LIFE — KISS OF LIFE",
       precio: 25000,
       imagenes: [
-        "img/kiss-of-life.jpg",
-        "img/kof.jpg"
+        "kiss-of-life.jpg",
+        "kof.jpg"
       ],
       categoria: "K-Pop",
       descripcion:
@@ -44,8 +44,8 @@ let productos = [
       nombre: "Armageddon — aespa",
       precio: 30000,
       imagenes: [
-        "img/armageddon.jpg",
-        "img/aespa.jpg"
+        "armageddon.jpg",
+        "aespa.jpg"
       ],
       categoria: "K-Pop",
       descripcion:
@@ -56,8 +56,8 @@ let productos = [
       nombre: "American Dream — 21 Savage",
       precio: 25000,
       imagenes: [
-        "img/american-dream.jpg",
-        "img/21-savage.jpg"
+        "american-dream.jpg",
+        "21-savage.jpg"
       ],
       categoria: "Hiphop",
       descripcion:
@@ -68,8 +68,8 @@ let productos = [
       nombre: "MEGAN — Megan Thee Stallion",
       precio: 35000,
       imagenes: [
-        "img/megan.jpg",
-        "img/megan-thee-stallion.jpg"
+        "megan.jpg",
+        "megan-thee-stallion.jpg"
       ],
       categoria: "Hiphop",
       descripcion:
@@ -150,8 +150,7 @@ function listarProductos(productosAListar = productos) {
       let li = document.createElement("li");
   
       let img = document.createElement("img");
-      // img.src = `img/${producto.imagenes[0]}`;
-      img.src = producto.imagenes[0];
+      img.src = `img/${producto.imagenes[0]}`;
       img.alt = producto.nombre;
   
       let div = document.createElement("div");
@@ -197,7 +196,7 @@ function agregarAlCarrito(producto) {
         nombre: producto.nombre,
         precio: producto.precio,
         subtotal: producto.precio,
-        imagen: producto.imagen,
+        imagen: producto.imagenes[0],
         categoria: producto.categoria,
         cantidad: 1,
       });
@@ -278,6 +277,10 @@ function listarProductosCarrito() {
       let li = document.createElement("li");
       li.classList.add("item-carrito");
   
+      let imagenProducto = document.createElement("img");
+      imagenProducto.src = `img/${producto.imagen}`;
+      imagenProducto.alt = producto.nombre;
+
       let nombreProducto = document.createElement("span");
       if (producto.cantidad > 1) {
         nombreProducto.innerText = `${producto.nombre} - $${producto.subtotal} — (${producto.cantidad})`;
@@ -291,8 +294,7 @@ function listarProductosCarrito() {
       eliminar.innerText = "Eliminar";
       eliminar.addEventListener("click", () => eliminarDelCarrito(producto.id));
   
-      li.appendChild(nombreProducto);
-      li.appendChild(eliminar);
+      li.append(imagenProducto, nombreProducto, eliminar);
   
       listaCarrito.appendChild(li);
     }
@@ -342,8 +344,7 @@ function mostrarDetallesProducto(producto) {
     let contenedorImagenes = document.createElement("div");
     for (let imagen of producto.imagenes){
       let img = document.createElement("img");
-      // img.src = `img/${imagen}`;
-      img.src = imagen;
+      img.src = `img/${imagen}`;
       img.alt = producto.nombre;
       contenedorImagenes.appendChild(img);
     }
