@@ -5,75 +5,75 @@
 let productos = [
     {
       id: 1,
-      nombre: "All Born Screaming — St. Vincent",
+      nombre: "Hyperdrama — Justice",
       precio: 30000,
       imagenes: [
-        "img/all-born-screaming.jpg",
-        "https://placehold.co/600x600"
+        "img/hyperdrama.jpg",
+        "img/justice.jpg"
       ],
-      categoria: "Alternativo",
+      categoria: "Electronica",
       descripcion:
-        "El séptimo álbum de Clark, titulado All Born Screaming, fue estrenado el 26 de abril del 2024. El álbum fue autoproducido por Clark, y tuvo colaboraciones con Dave Grohl, Cate Le Bon, Josh Freese, Rachel Eckroth, Mark Guiliana, Justin Meldal-Johnsen, Stella Mogzawa y David Ralicke. Con 10 canciones, la intérprete se adentra en géneros como el rock progresivo e industrial, jazz, electrónica y ska.",
+        "Hyperdrama es el cuarto álbum de estudio del dúo francés de música electrónica Justice, lanzado el 26 de abril de 2024 bajo el sello discográfico de Ed Banger Records y Because Music. Es también su primer álbum de estudio después de 7 años sin material nuevo.",
     },
     {
       id: 2,
-      nombre: "<Dall> — ARTMS",
-      precio: 25000,
+      nombre: "BRAT — Charli xcx",
+      precio: 35000,
       imagenes: [
-        "img/dall.jpg",
-        "https://placehold.co/600x600"
+        "img/brat.jpg",
+        "img/charli-xcx.jpg"
       ],
-      categoria: "K-Pop",
+      categoria: "Electronica",
       descripcion:
-        "<Dall> (Hangul: 달, Luna; acrónimo de “Devine All Love & Live”) es el álbum debut completo de ARTMS. Fue lanzado el 31 de mayo de 2024, a la 1PM KST, junto con la canción principal “Virtual Angel”.",
+        'BRAT es el sexto álbum de estudio de la cantante inglesa Charli XCX, lanzado por Atlantic Records el 7 de Junio de 2024 y fuertemente inspirado en la escena musical rave inglesa de la década de los 2000. Según Charli misma, BRAT es su "disco más agresivo y conflictivo", pero también el más vulnerable.',
     },
     {
       id: 3,
-      nombre: "What's Your Pleasure? — Jessie Ware",
-      precio: 35000,
-      imagenes: [
-        "img/whats-your-pleasure.jpg",
-        "https://placehold.co/600x600"
-      ],
-      categoria: "Alternativo",
-      descripcion:
-        "What's Your Pleasure? —en español, ¿Cúal es tu placer?— es el cuarto álbum de estudio de la cantante y compositora británica, Jessie Ware, que fue lanzado mundialmente el 26 de junio de 2020 por los sellos discográficos PMR, Virgin EMI y EMI.",
-    },
-    {
-      id: 4,
       nombre: "KISS OF LIFE — KISS OF LIFE",
       precio: 25000,
       imagenes: [
         "img/kiss-of-life.jpg",
-        "https://placehold.co/600x600"
+        "img/kof.jpg"
       ],
       categoria: "K-Pop",
       descripcion:
         "KISS OF LIFE es el primer EP del grupo surcoreano del mismo nombre. Fue lanzado por S2 Entertainment el 5 de julio de 2023. El mini álbum contiene seis pistas, incluido el sencillo principal «Shhh» y cuatro canciones en solitario, una por cada integrante, las cuales también tienen videos complementarios.",
     },
     {
-      id: 5,
-      nombre: "RUSH! (ARE U COMING?) — Måneskin",
-      precio: 35000,
+      id: 4,
+      nombre: "Armageddon — aespa",
+      precio: 30000,
       imagenes: [
-        "img/rush-are-u-coming.jpg",
-        "https://placehold.co/600x600"
+        "img/armageddon.jpg",
+        "img/aespa.jpg"
       ],
-      categoria: "Rock",
+      categoria: "K-Pop",
       descripcion:
-        "Rush! es el tercer álbum de estudio de la banda italiana de rock Måneskin, lanzado el 20 de enero de 2023 a través de Epic Records y Sony Music. Måneskin grabó ''probablemente 50'' canciones para el álbum, parte de las cuales se grabaron en Los Ángeles con el productor Max Martin.",
+        'Armageddon es el primer álbum completo del grupo surcoreano femenino "aespa". Es liderado por las canciones "Supernova" y "Armageddon", consideradas por muchos de sus fanáticos como las mejores en toda su discografía.',
+    },
+    {
+      id: 5,
+      nombre: "American Dream — 21 Savage",
+      precio: 25000,
+      imagenes: [
+        "img/american-dream.jpg",
+        "img/21-savage.jpg"
+      ],
+      categoria: "Hiphop",
+      descripcion:
+        "American Dream es el tercer álbum de estudio del rapero británico-estadounidense 21 Savage. Fue lanzado por Slaughter Gang Entertainment y Epic Records el 12 de enero de 2024, y tiene colaboraciones con otros artistas muy conocidos de la escena, como Doja Cat y Travis Scott.",
     },
     {
       id: 6,
-      nombre: "So Much (for) Stardust — Fall Out Boy",
-      precio: 30000,
+      nombre: "MEGAN — Megan Thee Stallion",
+      precio: 35000,
       imagenes: [
-        "img/so-much-for-stardust.jpg",
-        "https://placehold.co/600x600"
+        "img/megan.jpg",
+        "img/megan-thee-stallion.jpg"
       ],
-      categoria: "Rock",
+      categoria: "Hiphop",
       descripcion:
-        "So Much (For) Stardust es el octavo álbum de estudio de la banda estadounidense de rock Fall Out Boy. El disco fue publicado el 24 de marzo de 2023 por Fueled by Ramen. El álbum marca un regreso a un sonido más guiado por la guitarra.",
+        'MEGAN es el tercer álbum estudio homónimo de la rapera texana Megan Thee Stallion, y fue estrenado el 28 de junio del 2024 mediante Hot Girl Productions y BMG, marcando su primer proyecto desde su salida de 1501 Certified..',
     },
 ];
 
@@ -113,34 +113,35 @@ function mostrarBanner(){
   let bannerYaExistente = document.querySelector(".banner");
 
   if(bannerYaExistente){
-    main.removeChild(banner);
-  }else{
-    let banner = document.createElement("div");
-    banner.classList.add("banner");
-  
-    let imagen = document.createElement("img");
-    imagen.src = "https://placehold.co/800x200";
-    imagen.alt = "Banner publicitario";
-    // Agregarle diseño al banner, y un href para la oferta
-    
-    let cerrar = document.createElement("a");
-    cerrar.classList.add("cerrar");
-    cerrar.href = "#";
-    cerrar.innerText = "X";
-    cerrar.addEventListener("click", event => {
-      event.preventDefault();
-      main.removeChild(banner);
-    });
-
-    setTimeout(function() {
-      main.removeChild(banner);
-    }, 10000);
-    
-    banner.append(imagen, cerrar);
-    
-    main.appendChild(banner);
+    main.removeChild(bannerYaExistente);
   }
+
+  let banner = document.createElement("div");
+  banner.classList.add("banner");
+
+  let imagen = document.createElement("img");
+  imagen.src = "https://placehold.co/800x200";
+  imagen.alt = "Banner publicitario";
+  // Agregarle diseño al banner, y un href para la oferta
+  
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
+    event.preventDefault();
+    main.removeChild(banner);
+  });
+
+  setTimeout(function() {
+    main.removeChild(banner);
+  }, 10000);
+  
+  banner.append(imagen, cerrar);
+  
+  main.appendChild(banner);
 }
+
   
 // Función para listar productos
 function listarProductos(productosAListar = productos) {
