@@ -49,7 +49,7 @@ de CSS, etc.
 debe de haber 6 como mínimo.
 [X] El listado de productos debe obtenerse de un ARRAY multidimensional o de Objetos
 OBJECT.
-[] Cada vez que se cambia de categoría debe aparecer una oferta especial que se
+[X] Cada vez que se cambia de categoría debe aparecer una oferta especial que se
 destaque durante 10 segundos a modo de banner flotante, luego esta oferta DEBE
 DESAPARECER.
 ○ En el listado de productos, mostrar:
@@ -66,7 +66,7 @@ debe listar TODOS los productos agregados con el subtotal por cada producto y el
 total de la compra.
 [X] Los productos deben quitarse, ya sea de uno en uno, así como todos los que se han
 comprado.
-[] Debe haber un botón que marque el final de la selección de productos y permita
+[X] Debe haber un botón que marque el final de la selección de productos y permita
 avanzar al proceso de ingreso de datos de envío y pago, comúnmente conocido como
 'checkout'.
 [] En el checkout se debe solicitar la información del cliente (nombre, teléfono, email,

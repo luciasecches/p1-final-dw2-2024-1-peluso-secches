@@ -246,7 +246,7 @@ function mostrarCarrito() {
     });
   
     let discosTotal = document.createElement("p");
-    discosTotal.innerText = `Items: ${contadorCarrito} — Total: $${precioTotal}`;
+    discosTotal.innerText = `Items: ${contadorCarrito} — Total: ${peso.format(precioTotal)}`;
     discosTotal.classList.add("totalCarrito");
   
     let hr = document.createElement("hr");
@@ -286,7 +286,7 @@ function listarProductosCarrito() {
     let listaCarrito = document.getElementById("lista-carrito");
     listaCarrito.innerText = "";
     let totalCarrito = document.querySelector(".totalCarrito");
-    totalCarrito.innerText = `Items: ${contadorCarrito} — Total: $${precioTotal}`;
+    totalCarrito.innerText = `Items: ${contadorCarrito} — Total: ${peso.format(precioTotal)}`;
   
     for (let producto of carrito) {
       let li = document.createElement("li");
