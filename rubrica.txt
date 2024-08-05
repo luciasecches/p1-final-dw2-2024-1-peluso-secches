@@ -17,7 +17,7 @@
 [X] Mostrar el listado de los productos agregados al carrito (+0,50)
 [X] Permite quitar de a uno cada producto (+0,25)
 [X] Permite vaciar el carrito (+0,25)
-[] Genera la sección de checkout con los campos requeridos (+0,5)
+[X] Genera la sección de checkout con los campos requeridos (+0,5)
 
 // ------------------------------------------------------------------------------------------- SUMAN PUNTOS
 
@@ -26,9 +26,9 @@
 [X] El banner es distinto según la categoria (+0,5)
 [] El banner tiene una funcionalidad (+0,5)
 [X] Agrupación de productos iguales (+1,25) - osea mostrar "Tal producto x3", no repetir
-[] El checkout tiene datos obligatorios (+1)
-[] Resalta los campos obligatorios utilizando DOM (+0,5)
-[] Al finalizar la compra resetea el carrito (+0,5)
+[X] El checkout tiene datos obligatorios (+1)
+[X] Resalta los campos obligatorios utilizando DOM (+0,5)
+[X] Al finalizar la compra resetea el carrito (+0,5)
 [] Utiliza clases para generar objetos (+0,5)
 [X] Implementa la detección del teclado (+0,5)
 [X] Implementa el uso de localStorage (+0,5)

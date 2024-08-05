@@ -47,7 +47,7 @@ button {
 
 button:hover {
     cursor: pointer;
-    background-color: rgb(125, 78, 255);;
+    background-color: rgb(125, 78, 255);
 }
 
 main {
@@ -76,7 +76,8 @@ select {
 }
 
 #productos li img {
-    width: 600px;
+    width: 100%; /* Cambiado para ser responsive */
+    max-width: 600px; /* Máximo ancho para las imágenes */
     height: auto;
 }
 
@@ -107,18 +108,18 @@ li {
     right: 0;
     overflow: auto;
     padding: 2rem;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.685);
 }
 
 .modal button {
     margin: 1em;
-  }
-  
+}
+
 .modal .botonContainer {
     display: flex;
     justify-content: center;
 }
-  
+
 .modal > div {
     background: #ffffff;
     border-radius: 1em;
@@ -130,7 +131,7 @@ li {
     padding: 1rem;
     min-width: 400px;
 }
-  
+
 .modal a.cerrar, .banner a.cerrar {
     position: fixed;
     z-index: 1;
@@ -150,45 +151,44 @@ li {
     color: #5caebf;
     text-decoration: none;
 }
-  
+
 .modal a.cerrar:hover {
     background-color: #5caebf;
     color: rgba(255, 255, 255, 0.9);
 }
-  
+
 .modal img {
-    height: 30%;
+    height: auto;
     max-width: 300px;
 }
 
 .modal img:first-of-type {
     margin-right: 30px;
 }
-  
+
 .modal h3,
 .modal p,
 .modal li {
     margin: 0;
     text-align: justify;
     line-height: 250%;
-    /*color: #d0e0e3;*/
     text-align: center;
 }
-  
+
 .modal ul {
     padding: 0.5em 0;
     text-align: center;
 }
-  
+
 .totalCarrito,
 .label {
     font-weight: 700;
 }
-  
+
 #detalleProducto ul {
     width: 70%;
 }
-  
+
 .item-carrito {
     display: flex;
     justify-content: space-between;
@@ -207,15 +207,15 @@ li {
 .item-carrito img {
     height: 100px;
 }
-  
+
 .item-carrito .eliminar {
     margin-left: 1em;
 }
-  
+
 .descripcion-lista li:last-of-type span:last-child {
     display: block;
 }
-  
+
 .banner {
     display: flex;
     justify-content: center;
@@ -235,24 +235,26 @@ li {
     cursor: pointer;
 }
 
+/* Checkout Modal */
+
 #checkoutModal form {
     display: flex;
     flex-direction: column;
-    align-items:end;
+    align-items: end;
     gap: 2em;
+    padding-bottom: 2em;
 }
 
-#checkoutModal form label{
+#checkoutModal form label {
     padding-right: 1em;
 }
 
 #checkoutModal input {
     padding: 0.5em;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    border-radius: 0.5em;
+    border: 1px solid;
 }
 
-#mensajeError{
+#mensajeError {
     color: red;
-    display: none;
 }

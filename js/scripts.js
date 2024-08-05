@@ -3,78 +3,78 @@
 /* PELUSO MARTINA | SECCHES LUCÍA */
 
 let productos = [
-    {
-      id: 1,
-      nombre: "Hyperdrama — Justice",
-      precio: 30000,
-      imagenes: [
-        "hyperdrama.jpg",
-        "justice.jpg"
-      ],
-      categoria: "Electronica",
-      descripcion:
-        "Hyperdrama es el cuarto álbum de estudio del dúo francés de música electrónica Justice, lanzado el 26 de abril de 2024 bajo el sello discográfico de Ed Banger Records y Because Music. Es también su primer álbum de estudio después de 7 años sin material nuevo.",
-    },
-    {
-      id: 2,
-      nombre: "BRAT — Charli xcx",
-      precio: 35000,
-      imagenes: [
-        "brat.jpg",
-        "charli-xcx.jpg"
-      ],
-      categoria: "Electronica",
-      descripcion:
-        'BRAT es el sexto álbum de estudio de la cantante inglesa Charli XCX, lanzado por Atlantic Records el 7 de Junio de 2024 y fuertemente inspirado en la escena musical rave inglesa de la década de los 2000. Según Charli misma, BRAT es su "disco más agresivo y conflictivo", pero también el más vulnerable.',
-    },
-    {
-      id: 3,
-      nombre: "KISS OF LIFE — KISS OF LIFE",
-      precio: 25000,
-      imagenes: [
-        "kiss-of-life.jpg",
-        "kof.jpg"
-      ],
-      categoria: "K-Pop",
-      descripcion:
-        "KISS OF LIFE es el primer EP del grupo surcoreano del mismo nombre. Fue lanzado por S2 Entertainment el 5 de julio de 2023. El mini álbum contiene seis pistas, incluido el sencillo principal «Shhh» y cuatro canciones en solitario, una por cada integrante, las cuales también tienen videos complementarios.",
-    },
-    {
-      id: 4,
-      nombre: "Armageddon — aespa",
-      precio: 30000,
-      imagenes: [
-        "armageddon.jpg",
-        "aespa.jpg"
-      ],
-      categoria: "K-Pop",
-      descripcion:
-        'Armageddon es el primer álbum completo del grupo surcoreano femenino "aespa". Es liderado por las canciones "Supernova" y "Armageddon", consideradas por muchos de sus fanáticos como las mejores en toda su discografía.',
-    },
-    {
-      id: 5,
-      nombre: "American Dream — 21 Savage",
-      precio: 25000,
-      imagenes: [
-        "american-dream.jpg",
-        "21-savage.jpg"
-      ],
-      categoria: "Hiphop",
-      descripcion:
-        "American Dream es el tercer álbum de estudio del rapero británico-estadounidense 21 Savage. Fue lanzado por Slaughter Gang Entertainment y Epic Records el 12 de enero de 2024, y tiene colaboraciones con otros artistas muy conocidos de la escena, como Doja Cat y Travis Scott.",
-    },
-    {
-      id: 6,
-      nombre: "MEGAN — Megan Thee Stallion",
-      precio: 35000,
-      imagenes: [
-        "megan.jpg",
-        "megan-thee-stallion.jpg"
-      ],
-      categoria: "Hiphop",
-      descripcion:
-        'MEGAN es el tercer álbum estudio homónimo de la rapera texana Megan Thee Stallion, y fue estrenado el 28 de junio del 2024 mediante Hot Girl Productions y BMG, marcando su primer proyecto desde su salida de 1501 Certified..',
-    },
+  {
+    id: 1,
+    nombre: "Hyperdrama — Justice",
+    precio: 30000,
+    imagenes: [
+      "hyperdrama.jpg",
+      "justice.jpg"
+    ],
+    categoria: "Electronica",
+    descripcion:
+      "Hyperdrama es el cuarto álbum de estudio del dúo francés de música electrónica Justice, lanzado el 26 de abril de 2024 bajo el sello discográfico de Ed Banger Records y Because Music. Es también su primer álbum de estudio después de 7 años sin material nuevo.",
+  },
+  {
+    id: 2,
+    nombre: "BRAT — Charli xcx",
+    precio: 35000,
+    imagenes: [
+      "brat.jpg",
+      "charli-xcx.jpg"
+    ],
+    categoria: "Electronica",
+    descripcion:
+      'BRAT es el sexto álbum de estudio de la cantante inglesa Charli XCX, lanzado por Atlantic Records el 7 de Junio de 2024 y fuertemente inspirado en la escena musical rave inglesa de la década de los 2000. Según Charli misma, BRAT es su "disco más agresivo y conflictivo", pero también el más vulnerable.',
+  },
+  {
+    id: 3,
+    nombre: "KISS OF LIFE — KISS OF LIFE",
+    precio: 25000,
+    imagenes: [
+      "kiss-of-life.jpg",
+      "kof.jpg"
+    ],
+    categoria: "K-Pop",
+    descripcion:
+      "KISS OF LIFE es el primer EP del grupo surcoreano del mismo nombre. Fue lanzado por S2 Entertainment el 5 de julio de 2023. El mini álbum contiene seis pistas, incluido el sencillo principal «Shhh» y cuatro canciones en solitario, una por cada integrante, las cuales también tienen videos complementarios.",
+  },
+  {
+    id: 4,
+    nombre: "Armageddon — aespa",
+    precio: 30000,
+    imagenes: [
+      "armageddon.jpg",
+      "aespa.jpg"
+    ],
+    categoria: "K-Pop",
+    descripcion:
+      'Armageddon es el primer álbum completo del grupo surcoreano femenino "aespa". Es liderado por las canciones "Supernova" y "Armageddon", consideradas por muchos de sus fanáticos como las mejores en toda su discografía.',
+  },
+  {
+    id: 5,
+    nombre: "American Dream — 21 Savage",
+    precio: 25000,
+    imagenes: [
+      "american-dream.jpg",
+      "21-savage.jpg"
+    ],
+    categoria: "Hiphop",
+    descripcion:
+      "American Dream es el tercer álbum de estudio del rapero británico-estadounidense 21 Savage. Fue lanzado por Slaughter Gang Entertainment y Epic Records el 12 de enero de 2024, y tiene colaboraciones con otros artistas muy conocidos de la escena, como Doja Cat y Travis Scott.",
+  },
+  {
+    id: 6,
+    nombre: "MEGAN — Megan Thee Stallion",
+    precio: 35000,
+    imagenes: [
+      "megan.jpg",
+      "megan-thee-stallion.jpg"
+    ],
+    categoria: "Hiphop",
+    descripcion:
+      'MEGAN es el tercer álbum estudio homónimo de la rapera texana Megan Thee Stallion, y fue estrenado el 28 de junio del 2024 mediante Hot Girl Productions y BMG, marcando su primer proyecto desde su salida de 1501 Certified..',
+  },
 ];
 
 let selectFiltro = document.getElementById("filtro");
@@ -88,7 +88,6 @@ let precioTotal = 0;
 
 let peso = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS'}); // Para formatear el precio a pesos
 
-// Se obtienen los productos del localStorage (si hay) y se actualiza el carrito.
 
 let carrito = obtenerProductosEnCarrito();
 
@@ -107,7 +106,7 @@ let main = document.querySelector("main");
 
 selectFiltro.addEventListener("change", event => {
   let filtroSeleccionado = event.target.value;
-  mostrarBanner(filtroSeleccionado); // Pasa la categoría seleccionada
+  mostrarBanner(filtroSeleccionado);
 
   if (filtroSeleccionado === "Todos") {
     listarProductos();
@@ -117,7 +116,7 @@ selectFiltro.addEventListener("change", event => {
   }
 });
 
-// Función para mostar el banner al cambiar de categoría
+// Función para mostrar el banner al cambiar de categoría
 
 function mostrarBanner(categoria){
   let bannerExistente = document.querySelector(".banner");
@@ -366,52 +365,52 @@ function mostrarFormularioCheckout() {
   let contenido = document.createElement("div");
 
   let titulo = document.createElement("h2");
-  titulo.innerText = "Formulario de Checkout";
+  titulo.innerText = "Checkout";
 
   let formulario = document.createElement("form");
   formulario.id = "checkoutForm";
 
   let campos = [
-      {label: "Nombre", type: "text", id: "nombre", required: true},
-      {label: "Email", type: "email", id: "email", required: true},
-      {label: "Dirección", type: "text", id: "direccion", required: true},
-      {label: "Medio de pago", type: "select", id: "medioPago", required: true, options: ["Crédito", "Débito"]},
-      {label: "Núm. de la tarjeta", type: "number", id: "tarjeta", required: true},
-      {label: "Cód. seguridad", type: "number", id: "codigo", required: true},
+    {label: "Nombre", type: "text", id: "nombre", required: true},
+    {label: "Email", type: "email", id: "email", required: true},
+    {label: "Dirección", type: "text", id: "direccion", required: true},
+    {label: "Medio de pago", type: "select", id: "medioPago", required: true, options: ["Crédito", "Débito"]},
+    {label: "Núm. de la tarjeta", type: "number", id: "tarjeta", required: true},
+    {label: "Cód. seguridad", type: "number", id: "codigo", required: true},
   ];
 
-    campos.forEach(campo => {
-        let div = document.createElement("div");
+  campos.forEach(campo => {
+    let div = document.createElement("div");
 
-        let label = document.createElement("label");
-        label.setAttribute("for", campo.id);
-        label.innerText = campo.label;
+    let label = document.createElement("label");
+    label.setAttribute("for", campo.id);
+    label.innerText = campo.label;
 
-        let input;
+    let input;
+    if (campo.type === "select") {
+      input = document.createElement("select");
+      input.id = campo.id;
+      input.name = campo.id;
+      input.required = campo.required;
 
-        if (campo.type === "select") {
-            input = document.createElement("select");
-            input.id = campo.id;
-            input.name = campo.id;
-            input.required = campo.required;
+      campo.options.forEach(option => {
+        let optionElement = document.createElement("option");
+        optionElement.value = option;
+        optionElement.innerText = option;
+        input.appendChild(optionElement);
+      });
+    } else {
+      input = document.createElement("input");
+      input.type = campo.type;
+      input.id = campo.id;
+      input.name = campo.id;
+      input.required = campo.required;
 
-            campo.options.forEach(option => {
-                let optionElement = document.createElement("option");
-                optionElement.value = option;
-                optionElement.innerText = option;
-                input.appendChild(optionElement);
-            });
-        } else {
-            input = document.createElement("input");
-            input.type = campo.type;
-            input.id = campo.id;
-            input.name = campo.id;
-            input.required = campo.required;
-        }
+    }
 
-        div.append(label, input);
-        formulario.appendChild(div);
-    });
+    div.append(label, input);
+    formulario.appendChild(div);
+  });
 
   let mensajeError = document.createElement("p");
   mensajeError.id = "mensajeError";
@@ -420,13 +419,12 @@ function mostrarFormularioCheckout() {
   botonEnviar.type = "submit";
   botonEnviar.innerText = "Comprar";
   botonEnviar.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (validarFormulario()) {
-          procesarCompra();
-      } else {
-          mensajeError.innerText = "Por favor, completa todos los campos.";
-          mensajeError.style.display = "block";
-      }
+    e.preventDefault();
+    if (validarFormulario()) {
+      procesarCompra();
+    } else {
+      mensajeError.innerText = "Por favor, completa todos los campos.";
+    }
   });
 
   let botonCerrar = document.createElement("a");
@@ -434,140 +432,50 @@ function mostrarFormularioCheckout() {
   botonCerrar.href = "#";
   botonCerrar.innerText = "X";
   botonCerrar.addEventListener("click", event => {
-      event.preventDefault();
-      main.removeChild(modal);
+    event.preventDefault();
+    main.removeChild(modal);
   });
 
   contenido.append(titulo, formulario, mensajeError, botonEnviar, botonCerrar);
   modal.appendChild(contenido);
   main.appendChild(modal);
+
+  // Mostrar el modal
+  setTimeout(() => modal.classList.remove("ocultar"), 0);
 }
+
+// Función para validar el formulario
 
 function validarFormulario() {
-  let formulario = document.getElementById("checkoutForm");
-  let inputs = formulario.querySelectorAll("input[required]");
-  let valido = true;
-
-  inputs.forEach(input => {
-      if (!input.value) {
-          valido = false;
-      }
-  });
-
-  return valido;
-}
-
-function procesarCompra() {
-  // Aquí va la lógica para procesar la compra
-  alert("Compra procesada.");
+  let campos = document.querySelectorAll("#checkoutForm input");
+  return Array.from(campos).every(campo => campo.value.trim() !== "");
 }
 
 // Función para procesar la compra
+
 function procesarCompra() {
-  let formulario = document.getElementById("checkoutForm");
-  let datos = new FormData(formulario);
-  let cliente = {};
-
-  datos.forEach((value, key) => {
-      cliente[key] = value;
-  });
-
-  // Aquí puedes hacer algo con los datos del cliente, como enviarlos a un servidor
-  console.log("Datos de la compra:", cliente);
-
-  // Vaciar el carrito y cerrar el modal
-  vaciarCarrito();
-  document.getElementById("checkoutModal").remove();
+  // Aquí puedes procesar el formulario y enviar la compra
+  alert("Compra realizada con éxito.");
+  carrito = [];
+  contadorCarrito = 0;
+  precioTotal = 0;
+  actualizarCarrito();
+  main.removeChild(document.getElementById("checkoutModal"));
+  guardarProductosEnCarrito();
 }
 
-// Función modal descripción
+// Función para guardar productos en el carrito
 
-function mostrarDetallesProducto(producto) {
-    let modal = document.createElement("div");
-    modal.classList.add("modal");
-    modal.id = "detalleProducto";
-  
-    let contenido = document.createElement("div");
-  
-    let titulo = document.createElement("h2");
-    titulo.innerText = producto.nombre;
-  
-    let contenedorImagenes = document.createElement("div");
-    for (let imagen of producto.imagenes){
-      let img = document.createElement("img");
-      img.src = `img/${imagen}`;
-      img.alt = producto.nombre;
-      contenedorImagenes.appendChild(img);
-    }
-  
-    let listaDescripcion = document.createElement("ul");
-    listaDescripcion.classList.add("descripcion-lista");
-  
-    let propiedadesProducto = [
-      { label: "Precio", value: `${peso.format(producto.precio)}` },
-      { label: "Categoría", value: producto.categoria },
-      { label: "Descripción", value: producto.descripcion },
-    ];
-  
-    propiedadesProducto.forEach(propiedad => {
-      let listItem = document.createElement("li");
-  
-      let label = document.createElement("label");
-      label.innerText = `${propiedad.label}:`;
-      label.classList.add("label");
-  
-      let value = document.createElement("span");
-      value.innerText = ` ${propiedad.value}`;
-  
-      listItem.append(label, value);
-  
-      listaDescripcion.appendChild(listItem);
-    });
-  
-    let cerrar = document.createElement("a");
-    cerrar.classList.add("cerrar");
-    cerrar.href = "#";
-    cerrar.innerText = "X";
-    cerrar.addEventListener("click", event => {
-      event.preventDefault();
-      main.removeChild(modal);
-    });
-  
-    let botonAgregar = document.createElement("button");
-    botonAgregar.innerText = "Agregar al carrito";
-    botonAgregar.dataset.id = producto.id;
-    botonAgregar.addEventListener("click", () => agregarAlCarrito(producto));
-  
-    contenido.append(titulo, contenedorImagenes, listaDescripcion, botonAgregar, cerrar);
-  
-    modal.appendChild(contenido);
-    main.appendChild(modal);
-  }
-  
-// Función para detectar el teclado (y cerrar las modales y banners)
-
-window.addEventListener("keydown", event => {
-  let modalExistente = document.querySelector(".modal");
-  let bannerExistente = document.querySelector(".banner");
-  if (event.code === "Escape") {
-    if (modalExistente) {
-      main.removeChild(modalExistente);
-    } else if (bannerExistente) {
-      main.removeChild(bannerExistente);
-    }
-  }
-})
-
-// Implementación de localStorage
-
-function guardarProductosEnCarrito(){
-  localStorage.setItem('productosEnCarrito', JSON.stringify(carrito));
+function guardarProductosEnCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-function obtenerProductosEnCarrito(){
-  return JSON.parse(localStorage.getItem('productosEnCarrito')) ?? [];
-}
+// Función para obtener productos del carrito
 
-botonVerCarrito.addEventListener("click", mostrarCarrito);
+function obtenerProductosEnCarrito() {
+  let carritoGuardado = localStorage.getItem("carrito");
+  return carritoGuardado ? JSON.parse(carritoGuardado) : [];
+}
 
 listarProductos();
+botonVerCarrito.addEventListener("click", mostrarCarrito);
