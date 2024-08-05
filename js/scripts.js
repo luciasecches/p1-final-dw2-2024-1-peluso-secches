@@ -106,23 +106,23 @@ let main = document.querySelector("main");
 // Filtrado por categorías
 
 selectFiltro.addEventListener("change", event => {
-    let filtroSeleccionado = event.target.value;
-    mostrarBanner();
-  
-    if (filtroSeleccionado === "Todos") {
-      listarProductos();
-    } else {
-      let productosFiltrados = productos.filter(producto => producto.categoria === filtroSeleccionado);
-      listarProductos(productosFiltrados);
-    }
+  let filtroSeleccionado = event.target.value;
+  mostrarBanner(filtroSeleccionado); // Pasa la categoría seleccionada
+
+  if (filtroSeleccionado === "Todos") {
+    listarProductos();
+  } else {
+    let productosFiltrados = productos.filter(producto => producto.categoria === filtroSeleccionado);
+    listarProductos(productosFiltrados);
+  }
 });
 
 // Función para mostar el banner al cambiar de categoría
 
-function mostrarBanner(){
+function mostrarBanner(categoria){
   let bannerExistente = document.querySelector(".banner");
 
-  if(bannerExistente){
+  if (bannerExistente) {
     main.removeChild(bannerExistente);
   }
 
@@ -130,10 +130,21 @@ function mostrarBanner(){
   banner.classList.add("banner");
 
   let imagen = document.createElement("img");
-  imagen.src = "https://placehold.co/800x200";
   imagen.alt = "Banner publicitario";
-  // Agregarle diseño al banner, y un href para la oferta
-  
+  switch (categoria) {
+    case "Hiphop":
+      imagen.src = "img/banner-hiphop.jpg";
+      break;
+    case "Electronica":
+      imagen.src = "img/banner-electronica.jpg";
+      break;
+    case "K-Pop":
+      imagen.src = "img/banner-kpop.jpg";
+      break;
+    default:
+      imagen.src = "img/banner-todos.jpg";
+  }
+
   let cerrar = document.createElement("a");
   cerrar.classList.add("cerrar");
   cerrar.href = "#";
@@ -146,9 +157,8 @@ function mostrarBanner(){
   setTimeout(function() {
     main.removeChild(banner);
   }, 10000);
-  
+
   banner.append(imagen, cerrar);
-  
   main.appendChild(banner);
 }
 
@@ -230,54 +240,49 @@ function actualizarCarrito() {
 // Función para mostrar el carrito
 
 function mostrarCarrito() {
-    let resultCarrito = document.createElement("div");
-    resultCarrito.classList.add("modal");
-    resultCarrito.id = "resultCarrito";
-  
-    let contenidoCarrito = document.createElement("div");
-  
-    let cerrar = document.createElement("a");
-    cerrar.classList.add("cerrar");
-    cerrar.href = "#";
-    cerrar.innerText = "X";
-    cerrar.addEventListener("click", event => {
-      event.preventDefault();
-      main.removeChild(resultCarrito);
-    });
-  
-    let discosTotal = document.createElement("p");
-    discosTotal.innerText = `Items: ${contadorCarrito} — Total: ${peso.format(precioTotal)}`;
-    discosTotal.classList.add("totalCarrito");
-  
-    let hr = document.createElement("hr");
-  
-    let listaCarrito = document.createElement("ul");
-    listaCarrito.id = "lista-carrito";
-  
-    let botonPagar = document.createElement("button");
-    botonPagar.innerText = "Ir a Pagar";
-    botonPagar.addEventListener("click", () => {
-      window.open(
-        "https://cdn.discordapp.com/attachments/609152495733702671/1256373539095842826/tengapiedad.png?ex=6680888a&is=667f370a&hm=99bba7a247c2578479349945727a8ee19d6686df5b0de6736d4f8d340ef34da3&",
-        "_blank"
-      );
-    });
-  
-    let botonVaciar = document.createElement("button");
-    botonVaciar.innerText = "Vaciar";
-    botonVaciar.addEventListener("click", vaciarCarrito);
-  
-    let botonContainer = document.createElement("div");
-    botonContainer.classList.add("botonContainer");
-    botonContainer.appendChild(botonPagar);
-    botonContainer.appendChild(botonVaciar);
-  
-    contenidoCarrito.append(cerrar, discosTotal, hr, listaCarrito, botonContainer);
-  
-    resultCarrito.appendChild(contenidoCarrito);
-    main.appendChild(resultCarrito);
-  
-    listarProductosCarrito();
+  let resultCarrito = document.createElement("div");
+  resultCarrito.classList.add("modal");
+  resultCarrito.id = "resultCarrito";
+
+  let contenidoCarrito = document.createElement("div");
+
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
+    event.preventDefault();
+    main.removeChild(resultCarrito);
+  });
+
+  let discosTotal = document.createElement("p");
+  discosTotal.innerText = `Items: ${contadorCarrito} — Total: ${peso.format(precioTotal)}`;
+  discosTotal.classList.add("totalCarrito");
+
+  let hr = document.createElement("hr");
+
+  let listaCarrito = document.createElement("ul");
+  listaCarrito.id = "lista-carrito";
+
+  let botonPagar = document.createElement("button");
+  botonPagar.innerText = "Ir a Pagar";
+  botonPagar.addEventListener("click", () => mostrarFormularioCheckout());
+
+  let botonVaciar = document.createElement("button");
+  botonVaciar.innerText = "Vaciar";
+  botonVaciar.addEventListener("click", vaciarCarrito);
+
+  let botonContainer = document.createElement("div");
+  botonContainer.classList.add("botonContainer");
+  botonContainer.appendChild(botonPagar);
+  botonContainer.appendChild(botonVaciar);
+
+  contenidoCarrito.append(cerrar, discosTotal, hr, listaCarrito, botonContainer);
+
+  resultCarrito.appendChild(contenidoCarrito);
+  main.appendChild(resultCarrito);
+
+  listarProductosCarrito();
 }
 
 // Función para listar productos en el carrito
@@ -338,6 +343,7 @@ function eliminarDelCarrito(id) {
     }
 }
 
+
 // Función para vaciar el carrito
 
 function vaciarCarrito() {
@@ -347,6 +353,131 @@ function vaciarCarrito() {
     actualizarCarrito();
     guardarProductosEnCarrito();
     main.removeChild(document.getElementById("resultCarrito"));
+}
+
+
+// Función para mostrar el formulario de checkout
+
+function mostrarFormularioCheckout() {
+  let modal = document.createElement("div");
+  modal.classList.add("modal");
+  modal.id = "checkoutModal";
+
+  let contenido = document.createElement("div");
+
+  let titulo = document.createElement("h2");
+  titulo.innerText = "Formulario de Checkout";
+
+  let formulario = document.createElement("form");
+  formulario.id = "checkoutForm";
+
+  let campos = [
+      {label: "Nombre", type: "text", id: "nombre", required: true},
+      {label: "Email", type: "email", id: "email", required: true},
+      {label: "Dirección", type: "text", id: "direccion", required: true},
+      {label: "Medio de pago", type: "select", id: "medioPago", required: true, options: ["Crédito", "Débito"]},
+      {label: "Núm. de la tarjeta", type: "number", id: "tarjeta", required: true},
+      {label: "Cód. seguridad", type: "number", id: "codigo", required: true},
+  ];
+
+    campos.forEach(campo => {
+        let div = document.createElement("div");
+
+        let label = document.createElement("label");
+        label.setAttribute("for", campo.id);
+        label.innerText = campo.label;
+
+        let input;
+
+        if (campo.type === "select") {
+            input = document.createElement("select");
+            input.id = campo.id;
+            input.name = campo.id;
+            input.required = campo.required;
+
+            campo.options.forEach(option => {
+                let optionElement = document.createElement("option");
+                optionElement.value = option;
+                optionElement.innerText = option;
+                input.appendChild(optionElement);
+            });
+        } else {
+            input = document.createElement("input");
+            input.type = campo.type;
+            input.id = campo.id;
+            input.name = campo.id;
+            input.required = campo.required;
+        }
+
+        div.append(label, input);
+        formulario.appendChild(div);
+    });
+
+  let mensajeError = document.createElement("p");
+  mensajeError.id = "mensajeError";
+
+  let botonEnviar = document.createElement("button");
+  botonEnviar.type = "submit";
+  botonEnviar.innerText = "Comprar";
+  botonEnviar.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (validarFormulario()) {
+          procesarCompra();
+      } else {
+          mensajeError.innerText = "Por favor, completa todos los campos.";
+          mensajeError.style.display = "block";
+      }
+  });
+
+  let botonCerrar = document.createElement("a");
+  botonCerrar.classList.add("cerrar");
+  botonCerrar.href = "#";
+  botonCerrar.innerText = "X";
+  botonCerrar.addEventListener("click", event => {
+      event.preventDefault();
+      main.removeChild(modal);
+  });
+
+  contenido.append(titulo, formulario, mensajeError, botonEnviar, botonCerrar);
+  modal.appendChild(contenido);
+  main.appendChild(modal);
+}
+
+function validarFormulario() {
+  let formulario = document.getElementById("checkoutForm");
+  let inputs = formulario.querySelectorAll("input[required]");
+  let valido = true;
+
+  inputs.forEach(input => {
+      if (!input.value) {
+          valido = false;
+      }
+  });
+
+  return valido;
+}
+
+function procesarCompra() {
+  // Aquí va la lógica para procesar la compra
+  alert("Compra procesada.");
+}
+
+// Función para procesar la compra
+function procesarCompra() {
+  let formulario = document.getElementById("checkoutForm");
+  let datos = new FormData(formulario);
+  let cliente = {};
+
+  datos.forEach((value, key) => {
+      cliente[key] = value;
+  });
+
+  // Aquí puedes hacer algo con los datos del cliente, como enviarlos a un servidor
+  console.log("Datos de la compra:", cliente);
+
+  // Vaciar el carrito y cerrar el modal
+  vaciarCarrito();
+  document.getElementById("checkoutModal").remove();
 }
 
 // Función modal descripción

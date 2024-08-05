@@ -234,3 +234,25 @@ li {
 .banner:hover {
     cursor: pointer;
 }
+
+#checkoutModal form {
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    gap: 2em;
+}
+
+#checkoutModal form label{
+    padding-right: 1em;
+}
+
+#checkoutModal input {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#mensajeError{
+    color: red;
+    display: none;
+}

@@ -23,7 +23,7 @@
 
 [X] Permite ver el detalle del producto (+0,5)
 [X] Muestra más de una imagen por producto (+0,75)
-[] El banner es distinto según la categoria (+0,5)
+[X] El banner es distinto según la categoria (+0,5)
 [] El banner tiene una funcionalidad (+0,5)
 [X] Agrupación de productos iguales (+1,25) - osea mostrar "Tal producto x3", no repetir
 [] El checkout tiene datos obligatorios (+1)
