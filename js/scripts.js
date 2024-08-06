@@ -88,7 +88,6 @@ let precioTotal = 0;
 
 let peso = new Intl.NumberFormat('es-AR', { style: 'currency', currency: 'ARS'}); // Para formatear el precio a pesos
 
-
 let carrito = obtenerProductosEnCarrito();
 
 carrito.forEach(producto => {
@@ -123,6 +122,7 @@ function mostrarBanner(categoria){
 
   if (bannerExistente) {
     main.removeChild(bannerExistente);
+    clearTimeout(timerBanner);
   }
 
   let banner = document.createElement("div");
@@ -154,10 +154,11 @@ function mostrarBanner(categoria){
   cerrar.innerText = "X";
   cerrar.addEventListener("click", event => {
     event.preventDefault();
+    clearTimeout(timerBanner);
     main.removeChild(banner);
   });
 
-  setTimeout(function() {
+  const timerBanner = setTimeout(() => {
     main.removeChild(banner);
   }, 10000);
 
@@ -274,6 +275,71 @@ function agregarAlCarrito(producto) {
 function actualizarCarrito() {
     spanContadorCarrito.innerText = `(${contadorCarrito})`;
     spanPrecioTotal.innerText = peso.format(precioTotal);
+}
+
+
+// Función modal descripción
+
+function mostrarDetallesProducto(producto) {
+  let modal = document.createElement("div");
+  modal.classList.add("modal");
+  modal.id = "detalleProducto";
+
+  let contenido = document.createElement("div");
+
+  let titulo = document.createElement("h2");
+  titulo.innerText = producto.nombre;
+
+  let contenedorImagenes = document.createElement("div");
+  for (let imagen of producto.imagenes){
+    let img = document.createElement("img");
+    img.src = `img/${imagen}`;
+    img.alt = producto.nombre;
+    contenedorImagenes.appendChild(img);
+  }
+
+  let listaDescripcion = document.createElement("ul");
+  listaDescripcion.classList.add("descripcion-lista");
+
+  let propiedadesProducto = [
+    { label: "Precio", value: `${peso.format(producto.precio)}` },
+    { label: "Categoría", value: producto.categoria },
+    { label: "Descripción", value: producto.descripcion },
+  ];
+
+  propiedadesProducto.forEach(propiedad => {
+    let listItem = document.createElement("li");
+
+    let label = document.createElement("label");
+    label.innerText = `${propiedad.label}:`;
+    label.classList.add("label");
+
+    let value = document.createElement("span");
+    value.innerText = ` ${propiedad.value}`;
+
+    listItem.append(label, value);
+
+    listaDescripcion.appendChild(listItem);
+  });
+
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
+    event.preventDefault();
+    main.removeChild(modal);
+  });
+
+  let botonAgregar = document.createElement("button");
+  botonAgregar.innerText = "Agregar al carrito";
+  botonAgregar.dataset.id = producto.id;
+  botonAgregar.addEventListener("click", () => agregarAlCarrito(producto));
+
+  contenido.append(titulo, contenedorImagenes, listaDescripcion, botonAgregar, cerrar);
+
+  modal.appendChild(contenido);
+  main.appendChild(modal);
 }
 
 // Función para mostrar el carrito
@@ -398,6 +464,8 @@ function vaciarCarrito() {
 // Función para mostrar el formulario de checkout
 
 function mostrarFormularioCheckout() {
+  main.removeChild(document.getElementById("resultCarrito"));
+
   let modal = document.createElement("div");
   modal.classList.add("modal");
   modal.id = "checkoutModal";
@@ -504,7 +572,6 @@ mensajeError.innerText = "Por favor, complete todos los campos.";
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-
   if (!formulario.checkValidity()) {
     mensajeError.style.display = "block";
   } else {
@@ -533,11 +600,11 @@ main.appendChild(modal);
 // Función para procesar la compra
 
 function procesarCompra() {
-  console.log("Procesando la compra.");
-
   let modalExito = document.createElement("div");
-  modalExito.classList.add("modal-procesar");
+  modalExito.classList.add("modal");
   modalExito.id = "procesarModal";
+
+  let div = document.createElement("div");
 
   let mensaje = document.createElement("p");
   mensaje.innerText = "Compra realizada con éxito.";
@@ -546,28 +613,40 @@ function procesarCompra() {
   botonCerrar.classList.add("cerrar");
   botonCerrar.innerText = "Cerrar";
   botonCerrar.addEventListener("click", () => {
-    document.body.removeChild(modalExito);
+    main.removeChild(modalExito);
   });
 
-  modalExito.appendChild(mensaje);
-  modalExito.appendChild(botonCerrar);
+  div.append(mensaje, botonCerrar);
+  modalExito.appendChild(div);
 
-  document.body.appendChild(modalExito);
+  main.appendChild(modalExito);
 
   // Vaciar el carrito
   carrito = [];
   contadorCarrito = 0;
   precioTotal = 0;
 
-  console.log("Carrito vacío:", carrito);
   actualizarCarrito();
   guardarProductosEnCarrito();
 }
 
+// Función para detectar el teclado (y cerrar las modales y banners)
+
+window.addEventListener("keydown", event => {
+  let modalExistente = document.querySelector(".modal");
+  let bannerExistente = document.querySelector(".banner");
+  if (event.code === "Escape") {
+    if (modalExistente) {
+      main.removeChild(modalExistente);
+    } else if (bannerExistente) {
+      main.removeChild(bannerExistente);
+    }
+  }
+})
+
 // Función para guardar productos en el carrito
 
 function guardarProductosEnCarrito() {
-  console.log("Guardando carrito:", carrito);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 

@@ -237,19 +237,19 @@ li {
 
 /* Checkout Modal */
 
-.modal {
+#checkoutModal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 1em;
-    box-shadow: 0 0 2em rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.685);
 }
 
-.modal > div {
+#checkoutModal > div {
     display: flex;
     flex-direction: column;
     gap: 2em;
