@@ -367,106 +367,167 @@ function mostrarFormularioCheckout() {
   let titulo = document.createElement("h2");
   titulo.innerText = "Checkout";
 
-  let formulario = document.createElement("form");
-  formulario.id = "checkoutForm";
-
-  let campos = [
-    {label: "Nombre", type: "text", id: "nombre", required: true},
-    {label: "Email", type: "email", id: "email", required: true},
-    {label: "Dirección", type: "text", id: "direccion", required: true},
-    {label: "Medio de pago", type: "select", id: "medioPago", required: true, options: ["Crédito", "Débito"]},
-    {label: "Núm. de la tarjeta", type: "number", id: "tarjeta", required: true},
-    {label: "Cód. seguridad", type: "number", id: "codigo", required: true},
-  ];
-
-  campos.forEach(campo => {
-    let div = document.createElement("div");
-
-    let label = document.createElement("label");
-    label.setAttribute("for", campo.id);
-    label.innerText = campo.label;
-
-    let input;
-    if (campo.type === "select") {
-      input = document.createElement("select");
-      input.id = campo.id;
-      input.name = campo.id;
-      input.required = campo.required;
-
-      campo.options.forEach(option => {
-        let optionElement = document.createElement("option");
-        optionElement.value = option;
-        optionElement.innerText = option;
-        input.appendChild(optionElement);
-      });
-    } else {
-      input = document.createElement("input");
-      input.type = campo.type;
-      input.id = campo.id;
-      input.name = campo.id;
-      input.required = campo.required;
-
-    }
-
-    div.append(label, input);
-    formulario.appendChild(div);
-  });
-
-  let mensajeError = document.createElement("p");
-  mensajeError.id = "mensajeError";
-
-  let botonEnviar = document.createElement("button");
-  botonEnviar.type = "submit";
-  botonEnviar.innerText = "Comprar";
-  botonEnviar.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (validarFormulario()) {
-      procesarCompra();
-    } else {
-      mensajeError.innerText = "Por favor, completa todos los campos.";
-    }
-  });
-
-  let botonCerrar = document.createElement("a");
-  botonCerrar.classList.add("cerrar");
-  botonCerrar.href = "#";
-  botonCerrar.innerText = "X";
-  botonCerrar.addEventListener("click", event => {
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
     event.preventDefault();
     main.removeChild(modal);
   });
 
-  contenido.append(titulo, formulario, mensajeError, botonEnviar, botonCerrar);
-  modal.appendChild(contenido);
-  main.appendChild(modal);
+  let formulario = document.createElement("form");
 
-  // Mostrar el modal
-  setTimeout(() => modal.classList.remove("ocultar"), 0);
-}
+  // Nombre y Apellido
+  let nombreLabel = document.createElement("label");
+  nombreLabel.innerText = "Nombre y Apellido: ";
+  let nombreInput = document.createElement("input");
+  nombreInput.type = "text";
+  nombreInput.name = "nombre";
+  nombreInput.required = true;
 
-// Función para validar el formulario
+  // Dirección
+  let direccionLabel = document.createElement("label");
+  direccionLabel.innerText = "Dirección: ";
+  let direccionInput = document.createElement("input");
+  direccionInput.type = "text";
+  direccionInput.name = "direccion";
+  direccionInput.required = true;
 
-function validarFormulario() {
-  let campos = document.querySelectorAll("#checkoutForm input");
-  return Array.from(campos).every(campo => campo.value.trim() !== "");
+  // Teléfono
+  let telefonoLabel = document.createElement("label");
+  telefonoLabel.innerText = "Teléfono: ";
+  let telefonoInput = document.createElement("input");
+  telefonoInput.type = "tel";
+  telefonoInput.name = "telefono";
+  telefonoInput.required = true;
+
+  // Fecha de Entrega
+  let fechaLabel = document.createElement("label");
+  fechaLabel.innerText = "Fecha de Entrega: ";
+  let fechaInput = document.createElement("input");
+  fechaInput.type = "date";
+  fechaInput.name = "fecha";
+  fechaInput.required = true;
+
+  // Método de pago
+  let metodoPagoLabel = document.createElement("label");
+  metodoPagoLabel.innerText = "Método de Pago: ";
+  let metodoPagoSelect = document.createElement("select");
+  metodoPagoSelect.name = "metodoPago";
+  metodoPagoSelect.required = true;
+
+  let opcionesPago = ["Seleccionar", "Tarjeta de Débito", "Tarjeta de Crédito"];
+  opcionesPago.forEach(opcion => {
+    let option = document.createElement("option");
+    option.value = opcion;
+    option.innerText = opcion;
+    metodoPagoSelect.appendChild(option);
+  });
+
+  metodoPagoSelect.addEventListener("change", event => {
+    let tarjetaFields = document.querySelectorAll(".tarjeta-input");
+    if (event.target.value === "Tarjeta de Débito" || event.target.value === "Tarjeta de Crédito") {
+      tarjetaFields.forEach(field => field.classList.remove("hidden"));
+    } else {
+      tarjetaFields.forEach(field => field.classList.add("hidden"));
+    }
+  });
+
+// Cantidad de Cuotas
+let cuotasContainer = document.createElement("div");
+
+let cuotasLabel = document.createElement("label");
+cuotasLabel.innerText = "Cantidad de Cuotas: ";
+let cuotasSelect = document.createElement("select");
+cuotasSelect.name = "cuotas";
+cuotasSelect.required = true;
+
+let opcionesCuotas = ["1", "3", "6"];
+opcionesCuotas.forEach(opcion => {
+  let option = document.createElement("option");
+  option.value = opcion;
+  option.innerText = opcion;
+  cuotasSelect.appendChild(option);
+});
+
+cuotasLabel.appendChild(cuotasSelect);
+cuotasContainer.appendChild(cuotasLabel);
+
+let botonEnviar = document.createElement("button");
+botonEnviar.type = "submit";
+botonEnviar.innerText = "Comprar";
+
+let mensajeError = document.createElement("p");
+mensajeError.id = "mensajeError";
+mensajeError.innerText = "Por favor, complete todos los campos.";
+
+formulario.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!formulario.checkValidity()) {
+    mensajeError.style.display = "block";
+  } else {
+    mensajeError.style.display = "none";
+    procesarCompra();
+    main.removeChild(modal);
+  }
+});
+
+formulario.append(
+  nombreLabel, nombreInput,
+  direccionLabel, direccionInput,
+  telefonoLabel, telefonoInput,
+  fechaLabel, fechaInput,
+  metodoPagoLabel, metodoPagoSelect,
+  cuotasContainer,
+  mensajeError,
+  botonEnviar
+);
+
+contenido.append(cerrar, titulo, formulario);
+modal.appendChild(contenido);
+main.appendChild(modal);
 }
 
 // Función para procesar la compra
 
 function procesarCompra() {
-  // Aquí puedes procesar el formulario y enviar la compra
-  alert("Compra realizada con éxito.");
+  console.log("Procesando la compra.");
+
+  let modalExito = document.createElement("div");
+  modalExito.classList.add("modal-procesar");
+  modalExito.id = "procesarModal";
+
+  let mensaje = document.createElement("p");
+  mensaje.innerText = "Compra realizada con éxito.";
+
+  let botonCerrar = document.createElement("button");
+  botonCerrar.classList.add("cerrar");
+  botonCerrar.innerText = "Cerrar";
+  botonCerrar.addEventListener("click", () => {
+    document.body.removeChild(modalExito);
+  });
+
+  modalExito.appendChild(mensaje);
+  modalExito.appendChild(botonCerrar);
+
+  document.body.appendChild(modalExito);
+
+  // Vaciar el carrito
   carrito = [];
   contadorCarrito = 0;
   precioTotal = 0;
+
+  console.log("Carrito vacío:", carrito);
   actualizarCarrito();
-  main.removeChild(document.getElementById("checkoutModal"));
   guardarProductosEnCarrito();
 }
 
 // Función para guardar productos en el carrito
 
 function guardarProductosEnCarrito() {
+  console.log("Guardando carrito:", carrito);
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 

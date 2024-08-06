@@ -69,7 +69,7 @@ comprado.
 [X] Debe haber un botón que marque el final de la selección de productos y permita
 avanzar al proceso de ingreso de datos de envío y pago, comúnmente conocido como
 'checkout'.
-[] En el checkout se debe solicitar la información del cliente (nombre, teléfono, email,
+[X] En el checkout se debe solicitar la información del cliente (nombre, teléfono, email,
 lugar y fecha de entrega) y del pago (método de pago, cuotas –si corresponde–). Este
 proceso debe tener la posibilidad de cancelarse para seguir agregando o eliminando
 productos del carro.
@@ -96,7 +96,7 @@ instancias.
 la ventana modal al usar la tecla escape, o moverse a la imagen anterior/siguiente con
 las flechas).
 [X] El uso de localStorage.
-[] Resetear el carrito al finalizar la compra.
+[X] Resetear el carrito al finalizar la compra.
 
 ------------------------------------
 
