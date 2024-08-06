@@ -128,6 +128,10 @@ function mostrarBanner(categoria){
   let banner = document.createElement("div");
   banner.classList.add("banner");
 
+  let enlace = document.createElement("a");
+  enlace.href = "#";
+  enlace.classList.add("banner-enlace");
+
   let imagen = document.createElement("img");
   imagen.alt = "Banner publicitario";
   switch (categoria) {
@@ -157,7 +161,8 @@ function mostrarBanner(categoria){
     main.removeChild(banner);
   }, 10000);
 
-  banner.append(imagen, cerrar);
+  enlace.appendChild(imagen);
+  banner.append(enlace, cerrar);
   main.appendChild(banner);
 }
 
@@ -200,6 +205,41 @@ function listarProductos(productosAListar = productos) {
       li.append(img, div);
       listaDeProductos.appendChild(li);
     }
+}
+
+function mostrarDetallesProducto(producto) {
+
+  let modal = document.createElement("div");
+  modal.classList.add("modal");
+  modal.id = "productoModal";
+
+  let contenido = document.createElement("div");
+
+  let titulo = document.createElement("h2");
+  titulo.innerText = producto.nombre;
+
+  let imagen = document.createElement("img");
+  imagen.src = `img/${producto.imagenes[0]}`;
+  imagen.alt = producto.nombre;
+
+  let descripcion = document.createElement("p");
+  descripcion.innerText = producto.descripcion;
+
+  let precio = document.createElement("p");
+  precio.innerText = `Precio: ${peso.format(producto.precio)}`;
+
+  let cerrar = document.createElement("a");
+  cerrar.classList.add("cerrar");
+  cerrar.href = "#";
+  cerrar.innerText = "X";
+  cerrar.addEventListener("click", event => {
+    event.preventDefault();
+    document.body.removeChild(modal);
+  });
+
+  contenido.append(cerrar, titulo, imagen, descripcion, precio);
+  modal.appendChild(contenido);
+  document.body.appendChild(modal);
 }
 
 // Función para agregar al carrito
