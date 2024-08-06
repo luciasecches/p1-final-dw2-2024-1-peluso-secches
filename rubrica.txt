@@ -35,9 +35,9 @@
 
 // ------------------------------------------------------------------------------------------- RESTAN PUNTOS
 
-[] El sitio no cuenta con el mínimo de diseño inherente a un estudiante de Diseño Web (-10)
-[] Hay eventos inline desde alguna etiqueta HTML (-5)
-[] Usa alert, prompt y/o confirm (-5)
+[X] El sitio no cuenta con el mínimo de diseño inherente a un estudiante de Diseño Web (-10)
+[X] Hay eventos inline desde alguna etiqueta HTML (-5)
+[X] Usa alert, prompt y/o confirm (-5)
 [] Error en el nombre del archivo (-2)
 [] Corta la ejecución del programa por error de sintaxis (-2)
 [] El programa no inicia por error de sintaxis (-7)
